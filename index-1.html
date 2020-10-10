@@ -1,0 +1,39 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<p><strong>This was build at ETHIndia 2018 and we were among the 7 finalist of the hackathon, overall experience of the hackathon was awesome, solidity ftw &lt;3 My teamate for this hackathon was <a href="https://github.com/sakshisrivastava413">sakshisrivastava413</a> :)</strong></p>
+<h1 id="legit-chain"><strong><em>Legit Chain</em></strong></h1>
+<p>Legit Chain is blockchain based solution to avoid evidence tampering in Indian Court (actually any judiary based system out there).</p>
+<h2 id="problem-statement"><u>Problem Statement</u></h2>
+<p>
+In Courts, lot of evidences are tampered in a way or another due to which innocent lives are sued. When someone submit an evidence to the court (may it be a document, video or audio), the evidence is submitted to police after submission of the same. The parties and the court have to trust all the middle parties that come in between the process of <i>approval</i> to <i>submission</i> of the evidence.
+</p>
+
+<h2 id="our-solution"><u>Our Solution</u></h2>
+<p>We propose a solution where all the evidences submitted by a user are pushed to a immutable blockchain based database with a very simple and elegant user interface where user just uploads all the details of the evidence like its image, name, creation date, description and type and we handle all the things behind the scenes (uploading the image to ipfs, signing the details user filled using his / her public key, making the actual transaction to blockchain via organisation's account by verifying the hash so that user doesn't have to pay for the ether via making a submission and the organisation does the payment for user's transaction via taking care of security issues like mutating user's filled information).</p>
+<h2 id="technology-stack"><u>Technology Stack</u></h2>
+<ol>
+<li><a href="https://solidity.readthedocs.io/en/v0.4.24">Solidity</a> for writing Smart Contract(s)</li>
+<li><a href="https://reactjs.org">React</a> for frontend</li>
+<li><a href="https://ipfs.io/">IPFS</a> for file storage</li>
+<li><a href="https://www.nucypher.com/blockchain/">NuCypher</a> for Proxy Re-encryption of the file</li>
+<li><a href="https://truffleframework.com/ganache">Truffle Framework</a> for easy development of smart contracts and deploying to blockchain</li>
+<li><a href="https://truffleframework.com/ganache">Ganache</a> to provide local blockchain</li>
+<li><a href="https://web3js.readthedocs.io/en/1.0/">Web3JS</a> as layer to contact blockchain via normal browser</li>
+</ol>
+<h2 id="flow-of-the-application"><u>Flow of the application</u></h2>
+<p>
+
+- User enters it's public key and the Case ID given by officials to the system
+- They now chose one of the court cases going on with them
+- Now they are shown a evidence list of the case chosen and an option to upload a new evidence for approval to show in next hearing
+- They upload an evidence filling all its detail and the payload is encrypyted using NuCypher and signed using user's private key on the frontend and sent to the organisation's service
+- Organisation / Govt.'s service automatically makes a transaction to the blockchain on the behalf of user so that user doesn't have to pay for the gas
+- Evidence gets added to the blockchain and now is forever there and hence no immutability is possible, here we also trigger an event from the Smart Contract to update the UI with the new evidence.
+</p>
+
+<h2 id="accomplishments-we-are-proud-of"><u>Accomplishments we are proud of</u></h2>
+<p>
+
+- Making the organisation pay the gas for user without risking the transaction owner's data immutability
+- Encrypting data before adding to IPFS network using NuCypher
+</p>
+</body></html>
